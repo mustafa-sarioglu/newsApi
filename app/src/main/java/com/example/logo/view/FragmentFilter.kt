@@ -34,7 +34,7 @@ class FragmentFilter : Fragment() {
 
         sharedPreferences = requireActivity().getSharedPreferences("searchIn", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_filter, container, false)
     }
 
@@ -46,10 +46,6 @@ class FragmentFilter : Fragment() {
         dataIn = sharedPreferences.getString("searchIn","")
         Log.e("dataInFilterFragmnet",""+dataIn)
         textViewFragmentFilter.text = dataIn
-        /*arguments?.let {
-            dataIn = args.dataInn
-            Log.e("dataInFilterFragmnet",""+dataIn)
-        }*/
 
         toolbarFragmentFilter.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_fragmentFilter_to_fragmentSearch)

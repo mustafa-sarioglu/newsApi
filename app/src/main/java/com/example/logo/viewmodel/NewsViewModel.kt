@@ -16,29 +16,14 @@ class NewsViewModel(val newsRepository: NewsRepository): ViewModel()  {
     val searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     val searchNewsFromTo: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     val searchNewsIn: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
-    //val news: MutableLiveData<Article> = MutableLiveData()
-
-    /*var lang = "en"
-    var newsPage = 1*/
 
     init {
-        getNews() //"us", "en"
+        getNews()
     }
 
-   /* fun getNews(){
-
-        val article1 = Article(1,"content","desc","image","puslish","title","String")
-     *//*   val list = arrayListOf<Article>(article1)
-        val newsResponse = NewsResponse(list,1)
-        val res = Resource() *//*
-
-
-        news.value = article1
-    }*/
-
-    fun getNews() = viewModelScope.launch { //countryCode: String, language: String
+    fun getNews() = viewModelScope.launch {
         news.postValue(Resource.Loading())
-        val response = newsRepository.getNews() //countryCode,lang,newsPage
+        val response = newsRepository.getNews()
         news.postValue(handleNewsResponse(response))
     }
 
@@ -53,12 +38,6 @@ class NewsViewModel(val newsRepository: NewsRepository): ViewModel()  {
         val response = newsRepository.searchNewsFromTo(searchQueryFrom,searchQueryTo, searchQueryIn)
         searchNewsFromTo.postValue(handleSearchNewsFromToResponse(response))
     }
-
-   /* fun searchNewsIn(searchIn: String) = viewModelScope.launch {
-        searchNewsIn.postValue(Resource.Loading())
-        val response = newsRepository.searchNewsIn(searchIn)
-        searchNewsIn.postValue(handleSearchNewsInResponse(response))
-    }*/
 
     private fun handleNewsResponse(response: Response<NewsResponse>): Resource<NewsResponse>{
         if (response.isSuccessful){
@@ -87,12 +66,4 @@ class NewsViewModel(val newsRepository: NewsRepository): ViewModel()  {
         return Resource.Error(response.message())
     }
 
-    /*private fun handleSearchNewsInResponse(response: Response<NewsResponse>): Resource<NewsResponse>{
-        if (response.isSuccessful){
-            response.body()?.let { resultResponse ->
-                return Resource.Success(resultResponse)
-            }
-        }
-        return Resource.Error(response.message())
-    }*/
 }

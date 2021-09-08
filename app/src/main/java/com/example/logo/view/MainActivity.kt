@@ -29,9 +29,6 @@ class MainActivity : AppCompatActivity() {
         val viewModelProviderFactory= NewsViewModelProviderFactory(newsRepository)
         viewModel = ViewModelProvider(this,viewModelProviderFactory).get(NewsViewModel::class.java)
 
-        //controlling the fragments by bottomNavigation
-        //bottomNavigation.setupWithNavController(fragmentContainerView.findNavController())
-
         val navHostFragment= supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController= navHostFragment.navController
         bottomNavigation.setupWithNavController(navController)

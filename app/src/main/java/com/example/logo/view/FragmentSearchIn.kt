@@ -33,7 +33,7 @@ class FragmentSearchIn : Fragment() {
 
         sharedPreferences = requireActivity().getSharedPreferences("searchIn", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_search_in, container, false)
     }
 
@@ -81,10 +81,7 @@ class FragmentSearchIn : Fragment() {
         buttonApplyFilter.setOnClickListener {
             val output:String = convertString(list)
             Log.e("a",""+output)
-            /*val bundle = Bundle().apply {
-                putSerializable("output",output)
-            }
-            Log.e("bundle",""+bundle)*/
+
             editor.putString("searchIn",output)
             editor.commit()
             findNavController().navigate(R.id.action_fragmentSearchIn_to_fragmentFilter)

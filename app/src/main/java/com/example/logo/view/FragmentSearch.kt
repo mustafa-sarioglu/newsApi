@@ -48,7 +48,7 @@ class FragmentSearch : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         sharedPreferences = requireActivity().getSharedPreferences("value",Context.MODE_PRIVATE)
         sharedPreferencess = requireActivity().getSharedPreferences("searchIn", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
@@ -72,8 +72,6 @@ class FragmentSearch : Fragment() {
             Log.e("from",""+from)
             val to = args.dataa
             Log.e("to",""+to)
-            /*dataIn = args.dataIn
-            Log.e("dataIn",""+dataIn)*/
 
             if (from != "yyyy-mm-ddT13:58:42Z" && to != "yyyy-mm-ddT13:58:42Z"){
                 showRecyclerView()
@@ -114,17 +112,6 @@ class FragmentSearch : Fragment() {
                     viewModel.searchNews(firstWord,dataIn.toString(),sortBy.toString())
                 }
             }
-
-            /*builder.setPositiveButton("OK") { dialog, which ->
-                if (which == sortByArray.indexOf(0)){
-                    sortBy = "Upload date"
-                    Log.e("sortby",""+ sortBy)
-                }
-                else if (which == sortByArray.indexOf(1)){
-                    sortBy = "Relevance"
-                    Log.e("sortby",""+ sortBy)
-                }
-            }*/
 
             val dialog = builder.create()
             dialog.show()
