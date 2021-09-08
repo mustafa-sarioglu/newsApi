@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentNews">
+
+    <fragment
+        android:id="@+id/fragmentNews"
+        android:name="com.example.logo.view.FragmentNews"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_fragmentNews_to_fragmentArticle"
+            app:destination="@id/fragmentArticle"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.logo.view.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/fragmentSearch"
+        android:name="com.example.logo.view.FragmentSearch"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_fragmentSearch_to_fragmentArticle"
+            app:destination="@id/fragmentArticle"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragmentSearch_to_fragmentFilter"
+            app:destination="@id/fragmentFilter"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="data"
+            app:argType="string"
+            android:defaultValue="yyyy-mm-ddT13:58:42Z"/>
+        <argument
+            android:name="dataa"
+            app:argType="string"
+            android:defaultValue="yyyy-mm-ddT13:58:42Z"/>
+        <argument
+            android:name="dataIn"
+            app:argType="string"
+            android:defaultValue=" "/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFilter"
+        android:name="com.example.logo.view.FragmentFilter"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" >
+        <action
+            android:id="@+id/action_fragmentFilter_to_fragmentSearch"
+            app:destination="@id/fragmentSearch"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+             />
+        <action
+            android:id="@+id/action_fragmentFilter_to_fragmentSearchIn"
+            app:destination="@id/fragmentSearchIn"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="dataInn"
+            app:argType="string"
+            android:defaultValue=" "/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSearchIn"
+        android:name="com.example.logo.view.FragmentSearchIn"
+        android:label="fragment_search_in"
+        tools:layout="@layout/fragment_search_in" >
+        <action
+            android:id="@+id/action_fragmentSearchIn_to_fragmentFilter"
+            app:destination="@id/fragmentFilter" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.logo.view.FragmentProfile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragmentArticle"
+        android:name="com.example.logo.view.FragmentArticle"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" >
+        <action
+            android:id="@+id/action_fragmentArticle_to_fragmentNews"
+            app:destination="@id/fragmentNews" />
+        <action
+            android:id="@+id/action_fragmentArticle_to_fragmentSearch"
+            app:destination="@id/fragmentSearch" />
+        <argument
+            android:name="article"
+            app:argType="com.example.logo.model.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMore"
+        android:name="com.example.logo.view.FragmentMore"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" />
+</navigation>
