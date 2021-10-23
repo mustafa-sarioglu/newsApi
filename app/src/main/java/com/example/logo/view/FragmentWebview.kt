@@ -9,12 +9,12 @@ import android.webkit.WebViewClient
 import androidx.navigation.fragment.navArgs
 import com.example.logo.R
 import com.example.logo.viewmodel.NewsViewModel
-import kotlinx.android.synthetic.main.fragment_article.*
+import kotlinx.android.synthetic.main.fragment_webview.*
 
-class FragmentArticle : Fragment() {
+class FragmentWebview : Fragment() {
 
     lateinit var viewModel: NewsViewModel
-    val args: FragmentArticleArgs by navArgs()
+    val args: FragmentWebviewArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class FragmentArticle : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_article, container, false)
+        return inflater.inflate(R.layout.fragment_webview, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

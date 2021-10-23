@@ -33,7 +33,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/icon_back"
+                app:navigationIcon="@drawable/ic_back"
                 app:title=" " />
 
             <TextView
@@ -56,7 +56,7 @@
                 android:layout_height="40dp"
                 android:background="@color/white"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/icon_clear"
+                android:src="@drawable/ic_clear"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.875"

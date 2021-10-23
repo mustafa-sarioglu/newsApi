@@ -96,9 +96,9 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/fragmentArticle"
-        android:name="com.example.logo.view.FragmentArticle"
+        android:name="com.example.logo.view.FragmentWebview"
         android:label="fragment_article"
-        tools:layout="@layout/fragment_article" >
+        tools:layout="@layout/fragment_webview" >
         <action
             android:id="@+id/action_fragmentArticle_to_fragmentNews"
             app:destination="@id/fragmentNews" />

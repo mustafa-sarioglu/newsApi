@@ -81,7 +81,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/button_background"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/icon_filter"
+                android:src="@drawable/ic_filter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonFragmentSearchSort"
                 app:layout_constraintStart_toEndOf="@+id/textInputLayout"
@@ -97,7 +97,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/button_background"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/icon_sort"
+                android:src="@drawable/ic_sort"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
